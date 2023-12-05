@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.util.Log
-import android.view.View
 import android.widget.Button
 
 
-private lateinit var buttonMap: Button
-private lateinit var buttonSettings: Button
+private lateinit var mapButtonClick: Button
+private lateinit var settingsButtonClick: Button
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,11 +29,5 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             Log.w("MainActivity", "Sent to SettingsActivity view?")
         }
-    }/*
-    fun onMapClick(v:View){
-
     }
-    fun onSettingsClick(v:View){
-
-    }*/
 }
