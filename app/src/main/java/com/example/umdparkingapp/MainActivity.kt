@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var mapButtonClick = findViewById<Button>(R.id.buttonMap)
-        var settingsButtonClick = findViewById<Button>(R.id.buttonSettings)
+        mapButtonClick = findViewById<Button>(R.id.buttonMap)
+        settingsButtonClick = findViewById<Button>(R.id.buttonSettings)
 
         mapButtonClick.setOnClickListener {
             val intent = Intent(this, MapActivity::class.java)
