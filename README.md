@@ -1,4 +1,5 @@
 # UMDParkingApp
+This is an app created by Bryce Patterson and John McAdoo
 This is an app that shows available parking lots for the UMD campus. Project for CMSC436.
 This app has three pages: About, Settings, and Main.
 
