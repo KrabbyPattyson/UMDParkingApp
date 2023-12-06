@@ -32,6 +32,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         var umd : LatLng = LatLng( 38.9860, -76.9451 )
 
         // add a circle
+
         var options : CircleOptions = CircleOptions( )
         options.center( umd )
         options.radius( 100.0 )
