@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.umdparkingapp"
-        minSdk = 24
+        minSdk = 33 //24
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
