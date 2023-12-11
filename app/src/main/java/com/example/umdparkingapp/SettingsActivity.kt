@@ -12,6 +12,9 @@ import androidx.appcompat.widget.SwitchCompat
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
+import android.widget.Toast
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 
 // Project 4 game.kt is the one with persistent data aka SharedPreferences that we will use here
 
@@ -30,7 +33,22 @@ class SettingsActivity : AppCompatActivity() {
         serviceSwitch = findViewById(R.id.serviceSwitch)
         lotName = findViewById(R.id.spinner)
 
+        lotName.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                // Handle the item selection here
+                var newPos = position+1
+                showToast("Parking Permit Selected: Lot$newPos")
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Do nothing here
+            }
+        }
+
         //createAd( )
+    }
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     fun createAd( ) {
