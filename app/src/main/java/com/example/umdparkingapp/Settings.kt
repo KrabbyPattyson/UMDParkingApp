@@ -43,10 +43,6 @@ class Settings {
         lot = l
     }
 
-    fun getLots() : String {
-        return lot
-    }
-
     fun getLot() : String {
         return lot
     }
