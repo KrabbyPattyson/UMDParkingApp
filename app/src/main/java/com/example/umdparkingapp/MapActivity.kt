@@ -41,18 +41,25 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         var lot3: LatLng = LatLng(38.988189,-76.953328)
         var lot4: LatLng = LatLng(38.985521,-76.954336)
         var lot5: LatLng = LatLng(38.985095,-76.954872)
+        var mowatt: LatLng = LatLng(38.981761,-76.945572)
 
-        if(MainActivity.settings.getLot() == "Lot 1"){
-            map.addMarker(MarkerOptions().position(lot1).title("Lot 1").snippet("Your parking permit is here"))
-        } else if(MainActivity.settings.getLot() == "Lot 2"){
-            map.addMarker(MarkerOptions().position(lot2).title("Lot 2").snippet("Your parking permit is here"))
-        } else if(MainActivity.settings.getLot() == "Lot 3"){
-            map.addMarker(MarkerOptions().position(lot3).title("Lot 3").snippet("Your parking permit is here"))
-        } else if(MainActivity.settings.getLot() == "Lot 4"){
-            map.addMarker(MarkerOptions().position(lot4).title("Lot 4").snippet("Your parking permit is here"))
-        } else if(MainActivity.settings.getLot() == "Lot 5"){
-            map.addMarker(MarkerOptions().position(lot5).title("Lot 5").snippet("Your parking permit is here"))
+        if(MainActivity.settings.gameday){
+            var options: CircleOptions = CircleOptions().center(mowatt).radius(100.0).strokeWidth(10.0f).strokeColor(Color.RED)
+            map.addCircle(options)
+        } else{
+            if(MainActivity.settings.getLot() == "Lot 1"){
+                map.addMarker(MarkerOptions().position(lot1).title("Lot 1").snippet("Your parking permit is here"))
+            } else if(MainActivity.settings.getLot() == "Lot 2"){
+                map.addMarker(MarkerOptions().position(lot2).title("Lot 2").snippet("Your parking permit is here"))
+            } else if(MainActivity.settings.getLot() == "Lot 3"){
+                map.addMarker(MarkerOptions().position(lot3).title("Lot 3").snippet("Your parking permit is here"))
+            } else if(MainActivity.settings.getLot() == "Lot 4"){
+                map.addMarker(MarkerOptions().position(lot4).title("Lot 4").snippet("Your parking permit is here"))
+            } else if(MainActivity.settings.getLot() == "Lot 5"){
+                map.addMarker(MarkerOptions().position(lot5).title("Lot 5").snippet("Your parking permit is here"))
+            }
         }
+
         // add a circle
 
         var options : CircleOptions = CircleOptions( )
