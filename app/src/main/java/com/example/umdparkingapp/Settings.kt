@@ -6,31 +6,25 @@ import android.util.Log
 
 class Settings {
     private var gameday : Boolean = false
-    private var handicap : Boolean = false
     private var service : Boolean = false
     private var lot : String = "None"
 
-    constructor(gameday : Boolean, handicap : Boolean, service : Boolean, lot : String) {
+    constructor(gameday : Boolean, service : Boolean, lot : String) {
         setGameday( gameday )
-        setHandicap( handicap )
         setService( service )
+        setLot( lot )
     }
 
     constructor( context: Context) {
         var pref : SharedPreferences = context.getSharedPreferences( context.packageName + "_preferences",
             Context.MODE_PRIVATE )
         setGameday( pref.getBoolean(GAMEDAY, false ))
-        setHandicap( pref.getBoolean(HANDICAP, false))
         setService( pref.getBoolean(SERVICE, false))
         setLot(pref.getString(LOT, "None").toString())
     }
 
     fun setGameday(g : Boolean) {
         gameday = g
-    }
-
-    fun setHandicap(h : Boolean) {
-        handicap = h
     }
 
     fun setService(s : Boolean) {
@@ -51,14 +45,13 @@ class Settings {
 
         var editor : SharedPreferences.Editor = pref.edit()
         editor.putBoolean(GAMEDAY, gameday)
-        editor.putBoolean(HANDICAP, handicap )
         editor.putBoolean(SERVICE, service )
         editor.putString(LOT, lot)
         editor.commit()
     }
 
     fun sayPreferences() {
-        Log.w("MainActivity", "You're preferences are: \nGameday: ${gameday}\nHandicap: ${handicap}\nService/Faculty: ${service}\nLot: $lot")
+        Log.w("MainActivity", "You're preferences are: \nGameday: ${gameday}\nService/Faculty: ${service}\nLot: $lot")
     }
 
     // This holds the keys to the persistent data for other activities to use

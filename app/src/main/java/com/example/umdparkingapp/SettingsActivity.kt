@@ -29,7 +29,6 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_settings)
 
         gamedaySwitch = findViewById(R.id.gameDaySwitch)
-        handicapSwitch = findViewById(R.id.handicapSwitch)
         serviceSwitch = findViewById(R.id.serviceSwitch)
         lotName = findViewById(R.id.spinner)
 
@@ -78,7 +77,6 @@ class SettingsActivity : AppCompatActivity() {
 
     fun saveSettings(v: View) {
         MainActivity.settings.setGameday(gamedaySwitch.isChecked)
-        MainActivity.settings.setHandicap(handicapSwitch.isChecked)
         MainActivity.settings.setService(serviceSwitch.isChecked)
         MainActivity.settings.setLot(lotName.selectedItem.toString())
         MainActivity.settings.setPreferences(this)

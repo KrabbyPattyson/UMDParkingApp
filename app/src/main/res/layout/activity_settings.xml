@@ -29,26 +29,15 @@
         app:layout_constraintTop_toBottomOf="@+id/settings_header" />
 
     <TextView
-        android:id="@+id/handicapText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="80dp"
-        android:text="@string/handicapText"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameDayText" />
-
-    <TextView
         android:id="@+id/serviceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="16dp"
         android:text="@string/serviceText"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/handicapText" />
+        app:layout_constraintTop_toBottomOf="@+id/gameDayText" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/gameDaySwitch"
@@ -64,38 +53,26 @@
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/handicapSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="84dp"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/handicapText"
-        app:layout_constraintTop_toBottomOf="@+id/gameDaySwitch" />
-
-    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/serviceSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="84dp"
         android:minWidth="48dp"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toEndOf="@+id/serviceText"
-        app:layout_constraintTop_toBottomOf="@+id/handicapSwitch" />
+        app:layout_constraintTop_toBottomOf="@+id/gameDaySwitch" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="56dp"
         android:entries="@array/parkingLots"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/serviceText" />
 
@@ -103,11 +80,11 @@
         android:id="@+id/settingsBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="108dp"
         android:onClick="endActivity"
         android:text="@string/back"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.637"
+        app:layout_constraintHorizontal_bias="0.594"
         app:layout_constraintStart_toEndOf="@+id/save"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
@@ -127,11 +104,23 @@
         android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="108dp"
         android:onClick="saveSettings"
         android:text="@string/Save"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="56dp"
+        android:autoSizeMaxTextSize="24sp"
+        android:text="@string/permit"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/serviceText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
