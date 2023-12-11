@@ -44,6 +44,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         var lot3: LatLng = LatLng(38.988189,-76.953328)
         var lot4: LatLng = LatLng(38.985521,-76.954336)
         var lot5: LatLng = LatLng(38.985095,-76.954872)
+        var lotY:LatLng = LatLng(38.984072,-76.941994)
         val allLots: List<Pair<Double, Double>> = listOf(
             Pair(38.988127,-76.949295),
             Pair(38.994227,-76.948361),
@@ -54,19 +55,14 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         var mowatt: LatLng = LatLng(38.981761,-76.945572)
 
         // Place a marker on the user's parking permit lot
-        if(MainActivity.settings.getLot() == "Lot 1"){
-            map.addMarker(MarkerOptions().position(lot1).title("Lot 1").snippet("Your parking permit is here"))
-        } else if(MainActivity.settings.getLot() == "Lot 2"){
-            map.addMarker(MarkerOptions().position(lot2).title("Lot 2").snippet("Your parking permit is here"))
-        } else if(MainActivity.settings.getLot() == "Lot 3"){
-            map.addMarker(MarkerOptions().position(lot3).title("Lot 3").snippet("Your parking permit is here"))
-        } else if(MainActivity.settings.getLot() == "Lot 4"){
-            map.addMarker(MarkerOptions().position(lot4).title("Lot 4").snippet("Your parking permit is here"))
-        } else if(MainActivity.settings.getLot() == "Lot 5"){
-            map.addMarker(MarkerOptions().position(lot5).title("Lot 5").snippet("Your parking permit is here"))
-        if(MainActivity.settings.gameday){
+
+        if(settings.getGameday()){
             var options: CircleOptions = CircleOptions().center(mowatt).radius(100.0).strokeWidth(10.0f).strokeColor(Color.RED)
             map.addCircle(options)
+            if(settings.getService()){
+                var servOpt: CircleOptions = CircleOptions().center(lotY).radius(100.0).strokeWidth(10.0f).strokeColor(Color.BLUE)
+                map.addCircle(servOpt)
+            }
         } else{
             if(MainActivity.settings.getLot() == "Lot 1"){
                 map.addMarker(MarkerOptions().position(lot1).title("Lot 1").snippet("Your parking permit is here"))
@@ -79,9 +75,13 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             } else if(MainActivity.settings.getLot() == "Lot 5"){
                 map.addMarker(MarkerOptions().position(lot5).title("Lot 5").snippet("Your parking permit is here"))
             }
+            if(settings.getService()){
+                var servOpt: CircleOptions = CircleOptions().center(lotY).radius(100.0).strokeWidth(10.0f).strokeColor(Color.BLUE)
+                map.addCircle(servOpt)
+            }
         }
         // add a circle
-
+/*
         var options : CircleOptions = CircleOptions( )
         options.center( umd )
         options.radius( 100.0 )
@@ -89,7 +89,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         options.strokeColor( Color.RED )
         map.addCircle( options )
 
-
+*/
 
         // add a marker
         // var marker : MarkerOptions = MarkerOptions( )
@@ -98,7 +98,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         // marker.snippet( "How is the food?" )
         // map.addMarker( marker )
 
-        map.addMarker( MarkerOptions( ).position( umd ).title( "UMD").snippet( "How is the food?" ) )
+        //map.addMarker( MarkerOptions( ).position( umd ).title( "UMD").snippet( "How is the food?" ) )
 
         var camera : CameraUpdate = CameraUpdateFactory.newLatLngZoom( umd, 15.0f )
         map.moveCamera( camera )
