@@ -48,8 +48,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         var mowatt: LatLng = LatLng(38.981761,-76.945572)
 
         // Place a marker on the user's parking permit lot
-
-        if(settings.getGameday()){
+        if(MainActivity.settings.getGameday()){
             var options: CircleOptions = CircleOptions().center(mowatt).radius(100.0).strokeWidth(10.0f).strokeColor(Color.RED)
             map.addCircle(options)
             if(settings.getService()){
