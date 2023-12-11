@@ -32,6 +32,11 @@ class SettingsActivity : AppCompatActivity() {
         serviceSwitch = findViewById(R.id.serviceSwitch)
         lotName = findViewById(R.id.spinner)
 
+        //TODO: Set elements to what the current settings are, i.e. toggle switches
+        if(MainActivity.settings.getGameday()) {
+
+        }
+
         lotName.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 // Handle the item selection here

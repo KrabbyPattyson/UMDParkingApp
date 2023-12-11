@@ -27,12 +27,24 @@ class Settings {
         gameday = g
     }
 
+    fun getGameday() : Boolean {
+        return gameday
+    }
+
     fun setService(s : Boolean) {
         service = s
     }
 
+    fun getService() : Boolean {
+        return service
+    }
+
     fun setLot(l : String) {
         lot = l
+    }
+
+    fun getLots() : String {
+        return lot
     }
 
     fun getLot() : String {
