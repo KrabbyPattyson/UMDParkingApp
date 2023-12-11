@@ -45,13 +45,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         var lot4: LatLng = LatLng(38.985521,-76.954336)
         var lot5: LatLng = LatLng(38.985095,-76.954872)
         var lotY:LatLng = LatLng(38.984072,-76.941994)
-        val allLots: List<Pair<Double, Double>> = listOf(
-            Pair(38.988127,-76.949295),
-            Pair(38.994227,-76.948361),
-            Pair(38.988189,-76.953328),
-            Pair(38.985521,-76.954336),
-            Pair(38.985095,-76.954872)
-        )
         var mowatt: LatLng = LatLng(38.981761,-76.945572)
 
         // Place a marker on the user's parking permit lot
