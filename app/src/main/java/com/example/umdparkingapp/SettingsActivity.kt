@@ -39,6 +39,12 @@ class SettingsActivity : AppCompatActivity() {
         if(MainActivity.settings.getService()) {
             serviceSwitch.toggle()
         }
+        if(MainActivity.settings.getLot() != "None") {
+            val parkingLots = resources.getStringArray(R.array.parkingLots)
+            if(MainActivity.settings.getLot() in parkingLots) {
+                lotName.setSelection(parkingLots.indexOf(MainActivity.settings.getLot()))
+            }
+        }
 
         lotName.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
