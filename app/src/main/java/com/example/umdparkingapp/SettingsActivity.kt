@@ -7,6 +7,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 import android.widget.LinearLayout
+import android.widget.Spinner
+import androidx.appcompat.widget.SwitchCompat
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
@@ -15,9 +17,18 @@ import com.google.android.gms.ads.AdView
 
 class SettingsActivity : AppCompatActivity() {
     private lateinit var adView : AdView
+    private lateinit var gamedaySwitch : SwitchCompat
+    private lateinit var handicapSwitch : SwitchCompat
+    private lateinit var serviceSwitch : SwitchCompat
+    private lateinit var lotName : Spinner
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+
+        gamedaySwitch = findViewById(R.id.gameDaySwitch)
+        handicapSwitch = findViewById(R.id.handicapSwitch)
+        serviceSwitch = findViewById(R.id.serviceSwitch)
+        lotName = findViewById(R.id.spinner)
 
         //createAd( )
     }
@@ -46,4 +57,15 @@ class SettingsActivity : AppCompatActivity() {
     fun endActivity(v: View){
         finish()
     }
+
+    fun saveSettings(v: View) {
+        MainActivity.settings.setGameday(gamedaySwitch.isChecked)
+        MainActivity.settings.setHandicap(handicapSwitch.isChecked)
+        MainActivity.settings.setService(serviceSwitch.isChecked)
+        MainActivity.settings.setLot(lotName.selectedItem.toString())
+        MainActivity.settings.setPreferences(this)
+        finish()
+    }
+
+
 }

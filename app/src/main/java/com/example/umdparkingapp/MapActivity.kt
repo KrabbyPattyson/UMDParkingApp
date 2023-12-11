@@ -17,6 +17,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 
 class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var map : GoogleMap
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
@@ -30,6 +31,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         Log.w( "MainActivity", "Inside onMapReady" )
         map = p0
         var umd : LatLng = LatLng( 38.9860, -76.9451 )
+
 
         // add a circle
 

@@ -5,6 +5,7 @@
     <string name="handicapText">Handicap Parking</string>
     <string name="serviceText">Service/Faculty Parking</string>
     <string name="back">Back</string>
+    <string name="Save">Save</string>
 
     <string-array name="parkingLots">
         <item>Lot 1</item>

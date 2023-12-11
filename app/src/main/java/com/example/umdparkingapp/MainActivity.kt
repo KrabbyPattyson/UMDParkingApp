@@ -23,11 +23,23 @@ class MainActivity : AppCompatActivity() {
             Log.w("MainActivity", "Sent to MapActivity view?")
         }
 
+        // Create a Settings app
+        settings = Settings(this)
+        settings.sayPreferences()
 
         settingsButtonClick.setOnClickListener {
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
             Log.w("MainActivity", "Sent to SettingsActivity view?")
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        settings.sayPreferences()
+    }
+
+    companion object {
+        lateinit var settings : Settings
     }
 }
