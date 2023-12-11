@@ -41,6 +41,10 @@ class Settings {
         lot = l
     }
 
+    fun getLot() : String {
+        return lot
+    }
+
     fun setPreferences(context: Context){
         var pref : SharedPreferences = context.getSharedPreferences( context.packageName + "_preferences",
             Context.MODE_PRIVATE )
