@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.util.Log
-import android.transition.Slide
 import android.widget.Button
 
 
@@ -33,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         settingsButtonClick.setOnClickListener {
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
-            overridePendingTransition( R.anim.fade_in_and_scale, 0, 0 )
+            overridePendingTransition( R.anim.slide_left, 0, 0 )
             Log.w("MainActivity", "Sent to SettingsActivity view?")
         }
     }
