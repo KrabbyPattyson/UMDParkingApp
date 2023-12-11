@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapActivity"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment">
-</fragment>
+    android:orientation="vertical">
+
+    <!-- Add your views (e.g., buttons) here -->
+    <!-- SearchView at the top -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:queryHint="Search"
+        android:iconifiedByDefault="false" />
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapActivity"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment">
+    </fragment>
+
+    <!-- Add more views as needed -->
+
+</LinearLayout>
